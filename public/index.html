@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Brawl Chill Music</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional PWA / Mobile enhancements -->
+    <!-- <link rel="manifest" href="manifest.json"> -->
+    <!-- <meta name="theme-color" content="#2c3e50"> -->
+    <!-- <link rel="apple-touch-icon" href="icon-192.png"> -->
+    <style>
+        /* Minimal inline style to hide elements initially before CSS loads */
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Brawl Chill Music</h1>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search (e.g., lofi, study)" aria-label="Search Music">
+            <button id="searchButton" type="button">Search</button>
+        </div>
+
+        <div id="loading" class="loading-indicator hidden" role="status" aria-live="polite">
+            <p>Loading...</p>
+        </div>
+
+        <div id="error" class="error-message hidden" role="alert">
+            <p>An error occurred.</p>
+        </div>
+
+        <div id="results" class="results-container">
+            <!-- Search results dynamically inserted here -->
+        </div>
+
+        <div id="player" class="player-container hidden">
+            <h2>Now Playing</h2>
+            <p id="currentTrack" aria-live="polite">Nothing selected</p>
+            <p id="playlistInfo" class="hidden"></p>
+
+            <!-- Main Audio Player -->
+            <audio id="audioPlayer" controls preload="metadata">
+                Your browser does not support the audio element.
+            </audio>
+
+            <div class="controls">
+                <button id="nextButton" type="button" class="hidden">Next</button>
+                <!-- Play/Pause/Volume handled by native controls -->
+            </div>
+        </div>
+
+         <!-- Separate, hidden audio element for TTS playback -->
+        <audio id="ttsPlayer" preload="none" style="display: none;" aria-hidden="true"></audio>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
