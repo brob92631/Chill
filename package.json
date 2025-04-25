@@ -8,12 +8,12 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
-    "express": "^4.19.2", // Use latest 4.x
-    "ytdl-core": "^4.11.5", // Stable version, often recommended
-    "youtube-sr": "^4.3.11", // Use latest 4.x
-    "gtts": "^0.2.1"        // Seems stable
+    "express": "^4.19.2",
+    "ytdl-core": "^4.11.5",
+    "youtube-sr": "^4.3.11",
+    "gtts": "^0.2.1"
   },
   "engines": {
-    "node": "18.x" // Vercel requirement
+    "node": "18.x"
   }
 }
