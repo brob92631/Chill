@@ -2,22 +2,26 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/index.js",
-      "use": "@vercel/node"
+      "src": "api/index.js",    // Path to your serverless function entry point
+      "use": "@vercel/node"     // Specifies the Node.js builder
     },
     {
-      "src": "public/**",
-      "use": "@vercel/static"
+      "src": "public",          // Directory containing your static files (HTML, CSS, JS)
+      "use": "@vercel/static"   // Specifies the static asset builder
     }
   ],
   "routes": [
+    // Route requests starting with /api/ to your serverless function
     {
       "src": "/api/(.*)",
-      "dest": "api/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1" // Serve static files from public
+      "dest": "/api/index.js"  // The destination is the function file itself
     }
+    // --- No explicit route for static files needed here ---
+    // Vercel's default behavior, after checking the routes above,
+    // is to serve files from the output of the '@vercel/static' build.
+    // For example:
+    // - A request to '/' will look for 'public/index.html'.
+    // - A request to '/style.css' will look for 'public/style.css'.
+    // This relies on the file structure matching the requested path within the 'public' directory.
   ]
 }
