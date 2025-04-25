@@ -2,11 +2,11 @@
   "version": 2,
   "builds": [
     { "src": "api/index.js", "use": "@vercel/node" },
-    { "src": "static_files", "use": "@vercel/static" } // Renamed
+    { "src": "static_files", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/index.js" },
-    { "src": "/", "dest": "/index.html" }, // Assumes index.html is served from root of static output
-    { "src": "/(.*)", "dest": "/$1" }      // Assumes other files served from root
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }      
   ]
 }
