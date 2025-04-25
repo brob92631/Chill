@@ -1,0 +1,19 @@
+{
+  "name": "brawl-chill-redux",
+  "version": "1.0.0",
+  "description": "Mobile web app for playing chill YouTube music (Rebuilt)",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "express": "^4.19.2", // Use latest 4.x
+    "ytdl-core": "^4.11.5", // Stable version, often recommended
+    "youtube-sr": "^4.3.11", // Use latest 4.x
+    "gtts": "^0.2.1"        // Seems stable
+  },
+  "engines": {
+    "node": "18.x" // Vercel requirement
+  }
+}
